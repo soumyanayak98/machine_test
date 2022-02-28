@@ -1,0 +1,12 @@
+<%= f.label :date =%>
+<%= f.date_field :date =%>
+<br/>
+<%= f.label :timing =%>
+<%= f.time_field :timing =%>
+<br/>
+<%= f.label :theater_id =%>
+<%= f.collection_select :theater_id, Theater.all, :id, :name =%>
+<br/>
+<%= f.label :movie_id =%>
+<%= f.collection_select :movie_id, Movie.all, :id, :name =%>
+<br/>

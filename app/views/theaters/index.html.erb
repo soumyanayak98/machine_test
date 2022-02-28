@@ -1,0 +1,32 @@
+<%= link_to "<Back", root_path =%>
+<% if current_user.present? && is_admin? %>
+    <%= link_to "Add Theater", new_theater_path =%>
+<% end %>
+
+<h3>Theater (<%= @theaters.count =%>)</h3>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>  
+            <th>Name</th>
+            <th>City Name</th>
+            <th>AVL Seats</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @theaters.each do |theater| %>
+            <tr>
+                <td><%= link_to theater.id, theater =%></td>  
+                <td><%= theater.name =%></td> 
+                <td><%= theater.city_name=%></td> 
+                <td><%= theater.seats=%></td> 
+                <% if current_user.present? && is_admin? %>
+                    <td>
+                        <%= link_to "edit", edit_theater_path(theater) =%>
+                    </td> 
+                <% end %>
+            </tr>
+        <% end %>
+    </tbody>
+</table>

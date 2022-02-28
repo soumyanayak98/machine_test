@@ -1,0 +1,8 @@
+<p>Edit ShowTime</p>
+<%= form_for @show_time, method: :patch do |f| =%>
+    <%= render "form", f: f =%>
+    <%= f.submit =%>
+    <button>
+        <%= link_to "cancel", :back =%>
+    </button>
+<% end %>

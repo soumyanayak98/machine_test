@@ -1,0 +1,13 @@
+<p>Existing User login page !</p>
+<%= form_for :session, method: :post do |f| =%>
+    <%= f.label :name =%>
+    <%= f.text_field :name =%>
+    <br/>
+    <%= f.label :password =%>
+    <%= f.password_field :password =%>
+    <br/>
+    <%= f.submit "login" =%>
+    <button>
+        <%= link_to "cancel", root_path =%>
+    </button>
+<% end %>

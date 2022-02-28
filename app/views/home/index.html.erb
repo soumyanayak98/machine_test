@@ -1,0 +1,20 @@
+<h1>Home page</h1>
+
+<% if current_user.present? %>
+    <%= "Welcome #{current_user.name}" =%>
+    <br/>
+    <%= link_to "Logout", logout_path =%> <br/>
+
+<% else %>
+    <p> Welcome User</p>
+    <br/>
+    <%= link_to "Sign Up", signup_path =%> 
+    <%= link_to "Login", login_path =%> 
+<% end %>
+
+<%= link_to "Movies", movies_path =%>
+<%= link_to "Theater", theaters_path =%> 
+<%= link_to "ShoW-times", show_times_path =%> 
+
+
+

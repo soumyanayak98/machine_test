@@ -1,0 +1,33 @@
+<%= link_to "<Back", theaters_path =%>
+<div>
+    <h4>Theater Details :</h4>
+    <p>Name : <span><%= @theater.name =%></span></p>
+    <p>City Name: <span><%= @theater.city_name =%></span></p>
+    <p>Seats : <span><%= @theater.seats =%></span></p>
+</div>
+
+<div>
+    <h4>Show times details: </h4>
+    <p>upcoming shows(<%= @show_times.count =%>)</p>
+    <table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>  
+            <th>Movie Name</th>
+            <th>Date</th>
+            <th>Timing</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @show_times.each do |st| %>
+            <tr>
+                <td><%= st.id =%></td>  
+                <td><%= st.movie.name =%></td> 
+                <td><%= st.date =%></td>
+                <td><%= st.timing =%></td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
+
+</div>
